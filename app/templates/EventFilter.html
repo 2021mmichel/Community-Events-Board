@@ -1,0 +1,23 @@
+
+<html>
+    <head>
+        <title>Community Events Board: School Events</title>
+        <link rel="stylesheet" href="/../static/style.css">
+    </head>
+    <body>
+      <h1>Community Events Board</h1>
+      <div class="event-list">
+        <ul>
+          {% for event in events %}
+            <li>{{ event.event_name }} - {{ event.event_date }} - {{event.category}} - {{event.email}}</li>
+          {% endfor %}
+          <!-- set up a form with a post method and results action -->
+    <!-- need event_name and event_date using two text input (bonus- use date) -->
+    <br>
+    <!-- need submit button -->
+    </form>
+
+        </ul>
+      </div>
+    </body>
+</html>

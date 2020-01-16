@@ -1,0 +1,46 @@
+
+<html>
+    <head>
+        <title>Community Events Board</title>
+        <link rel="stylesheet" href="/../static/style.css">
+    </head>
+    <body>
+      <h1>Community Events Board</h1>
+      <div class="event-list">
+        <ul>
+          {% for event in events %}
+            <li>{{ event.event_name }} - {{ event.event_date }} - {{event.category}} - {{event.email}}</li>
+          {% endfor %}
+          <!-- set up a form with a post method and results action -->
+    <form method = "post" action = "/results">
+    <!-- need event_name and event_date using two text input (bonus- use date) -->
+    <p>Tell me your event name!</p>
+    <input type = "text" name = "event_name"/>
+    <br>
+    <p>Tell me your event date!</p>
+    <input type = "date" name = "event_date"/>
+    <p> Tell me your email account! </p>
+    <input type = "text" name = email
+    <br>
+    <p> Tell me the category of your event </p>
+    <input type = "radio" name = "category" value = "School">School<br>
+    <input type = "radio" name = "category" value = "Service">Service<br>
+    <input type = "radio" name = "category" value = "Sports">Sports<br>
+    <input type = "radio" name = "category" value = "Other">Other<br>
+    <!-- need submit button -->
+    <input type = "submit" value = "submit"/>
+    </form>
+    <form method = "post" action = "/EventFilter" >
+      <p> Click the category you want to see the events in. </p>
+      <input type = "radio" name = "category" value = "School">School<br>
+      <input type = "radio" name = "category" value = "Service">Service<br>
+      <input type = "radio" name = "category" value = "Sports">Sports<br>
+      <input type = "radio" name = "category" value = "Other">Other<br>
+      <br>
+      <input type ="submit" value = "submit"/>
+    </form>
+
+        </ul>
+      </div>
+    </body>
+</html>
